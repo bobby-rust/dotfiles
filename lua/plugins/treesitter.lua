@@ -33,7 +33,7 @@ return {
             fold = { enable = true },
             playground = {
                 enable = true
-            }
+            },
         }
     end
 }

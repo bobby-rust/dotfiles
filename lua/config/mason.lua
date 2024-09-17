@@ -50,6 +50,7 @@ require("mason-lspconfig").setup_handlers({
         })
     end
 })
+
 lspconfig.lua_ls.setup {
     on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then
