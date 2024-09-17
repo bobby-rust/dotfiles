@@ -1,5 +1,7 @@
 require("mason").setup()
-
+require("mason-null-ls").setup({
+    handlers = {},
+})
 require("mason-lspconfig").setup({
     automatic_installation = true
 })
