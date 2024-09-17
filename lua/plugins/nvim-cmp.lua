@@ -3,7 +3,9 @@ return {
     { "neovim/nvim-lspconfig" },
 
     -- Completion framework
-    { "hrsh7th/nvim-cmp" },
+    {
+        "hrsh7th/nvim-cmp",
+    },
 
     -- LSP source for nvim-cmp
     { "hrsh7th/cmp-nvim-lsp" },
@@ -18,12 +20,21 @@ return {
     { "hrsh7th/cmp-cmdline" },
 
     -- Vsnip integration
-    { "hrsh7th/cmp-vsnip" },
-    { "hrsh7th/vim-vsnip" },
+    -- { "hrsh7th/cmp-vsnip" },
+    -- { "hrsh7th/vim-vsnip" },
 
     -- (Optional) LuaSnip integration
-    -- { "L3MON4D3/LuaSnip" },
-    -- { "saadparwaiz1/cmp_luasnip" },
+    {
+        "L3MON4D3/LuaSnip",
+        dependencies = {
+            "rafamadriz/friendly-snippets"
+        },
+        config = function()
+            require('luasnip').filetype_extend("javascript", { "javascriptreact" })
+            require('luasnip').filetype_extend("javascript", { "html" })
+        end,
+    },
+    { "saadparwaiz1/cmp_luasnip" },
 
     -- (Optional) UltiSnips integration
     -- { "SirVer/ultisnips" },
