@@ -27,5 +27,3 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.o.wrap = false
 vim.o.relativenumber = true
-
-print("~/.config/nvim/init.lua loaded")

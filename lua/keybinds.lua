@@ -1,9 +1,9 @@
 -- Toggle nvim-tree
 vim.api.nvim_set_keymap("n", "<Leader>e", ":NvimTreeToggle<CR>", { noremap = true })
 
--- Focus on the window to the left 
+-- Focus on the window to the left
 vim.api.nvim_set_keymap("n", "<C-h>", "<C-w>h", { noremap = true })
--- Focus on the window below 
+-- Focus on the window below
 vim.api.nvim_set_keymap("n", "<C-j>", "<C-w>j", { noremap = true })
 -- Focus on the window above
 vim.api.nvim_set_keymap("n", "<C-k>", "<C-w>k", { noremap = true })
@@ -21,13 +21,16 @@ vim.api.nvim_set_keymap('n', '<Leader>ld', '<cmd>lua vim.diagnostic.open_float()
 
 -- Trigger code actions (quick fixes)
 vim.api.nvim_set_keymap('n', '<Leader>la', '<cmd>lua vim.lsp.buf.code_action()<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('x', '<Leader>la', '<cmd>lua vim.lsp.buf.range_code_action()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('x', '<Leader>la', '<cmd>lua vim.lsp.buf.range_code_action()<CR>',
+    { noremap = true, silent = true })
 
 -- Move lines up
 vim.api.nvim_set_keymap('n', '<A-j>', ':m .+1<CR>==', { noremap = true, silent = true })
-
 -- Move lines down
 vim.api.nvim_set_keymap('n', '<A-k>', ':m .-2<CR>==', { noremap = true, silent = true })
+-- Move selected lines in visual mode
+vim.keymap.set('v', '<A-j>', ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
+vim.keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 
 -- Telescope projects
 vim.keymap.set('n', '<leader>tsp', ':Telescope projects<CR>', { noremap = true })
