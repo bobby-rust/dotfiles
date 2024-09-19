@@ -4,7 +4,7 @@ require("config.null-ls")
 require("config.nvim-cmp")
 require("config.lualine")
 require("config.nvim-tree")
-require("config.project")
+-- require("config.project")
 require("keybinds")
 
 -- Enable 24-bit color

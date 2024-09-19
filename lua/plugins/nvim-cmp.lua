@@ -5,6 +5,9 @@ return {
     -- Completion framework
     {
         "hrsh7th/nvim-cmp",
+        dependencies = {
+            "L3MON4D3/LuaSnip"
+        }
     },
 
     -- LSP source for nvim-cmp
@@ -27,9 +30,11 @@ return {
     {
         "L3MON4D3/LuaSnip",
         dependencies = {
-            "rafamadriz/friendly-snippets"
+            "rafamadriz/friendly-snippets",
+            "saadparawaiz1/cmp_luasnip"
         },
         config = function()
+            require("luasnip").setup()
             require('luasnip').filetype_extend("javascript", { "javascriptreact" })
             require('luasnip').filetype_extend("javascript", { "html" })
         end,
