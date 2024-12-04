@@ -26,7 +26,8 @@ return {
                 "python",
                 "regex",
                 "rust",
-                "sql"
+                "sql",
+                "glimmer"
             },
             highlight = { enable = true },
             indent = { enable = true },

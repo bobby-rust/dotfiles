@@ -10,7 +10,14 @@ null_ls.setup({
             extra_args = {
                 "--tab-width=4"
             }
-        })
+        }),
+        -- Attach DjLint for Handlebars files
+        null_ls.builtins.formatting.djlint.with({
+            filetypes = { "hbs", "Handlebars", "handlebars" },
+        }),
+        null_ls.builtins.diagnostics.djlint.with({
+            filetypes = { "hbs", "Handlebars", "handlebars" },
+        }),
     },
     on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then
