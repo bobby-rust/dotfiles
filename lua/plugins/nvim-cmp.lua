@@ -21,6 +21,7 @@ return {
 
     -- Command-line completions
     { "hrsh7th/cmp-cmdline" },
+    { "hrsh7th/cmp-nvim-lsp-signature-help" },
 
     -- Vsnip integration
     -- { "hrsh7th/cmp-vsnip" },
