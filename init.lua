@@ -14,6 +14,9 @@ require("config.nvim-cmp")
 -- Enable 24-bit color
 vim.opt.termguicolors = true
 
+-- Colorscheme
+vim.cmd("colorscheme accent")
+
 -- Transparency
 vim.cmd("hi normal guibg=NONE ctermbg=NONE")
 vim.cmd("hi NvimTreeNormal guibg=NONE ctermbg=NONE")
@@ -31,7 +34,7 @@ vim.g.format_on_save = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
-vim.o.wrap = false
+vim.o.wrap = true
 vim.o.relativenumber = true
 
 -- LSP Diagnostics Options Setup
