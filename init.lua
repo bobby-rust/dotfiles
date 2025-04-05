@@ -5,7 +5,7 @@ require("config.mason")
 require("config.null-ls")
 require("config.lualine")
 require("config.nvim-tree")
--- require("config.project")
+require("config.autocmds")
 require("config.rust-tools")
 require("keybinds")
 require("config.nvim-cmp")
@@ -38,11 +38,11 @@ vim.o.relativenumber = true
 
 -- LSP Diagnostics Options Setup
 local sign = function(opts)
-	vim.fn.sign_define(opts.name, {
-		texthl = opts.name,
-		text = opts.text,
-		numhl = ''
-	})
+    vim.fn.sign_define(opts.name, {
+        texthl = opts.name,
+        text = opts.text,
+        numhl = ''
+    })
 end
 
 sign({ name = 'DiagnosticSignError', text = '' })
@@ -51,17 +51,17 @@ sign({ name = 'DiagnosticSignHint', text = '' })
 sign({ name = 'DiagnosticSignInfo', text = '' })
 
 vim.diagnostic.config({
-	virtual_text = false,
-	signs = true,
-	update_in_insert = true,
-	underline = true,
-	severity_sort = false,
-	float = {
-		border = 'rounded',
-		source = 'always',
-		header = '',
-		prefix = '',
-	},
+    virtual_text = false,
+    signs = true,
+    update_in_insert = true,
+    underline = true,
+    severity_sort = false,
+    float = {
+        border = 'rounded',
+        source = 'always',
+        header = '',
+        prefix = '',
+    },
 })
 
 vim.cmd([[

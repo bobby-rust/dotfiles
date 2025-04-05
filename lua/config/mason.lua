@@ -5,8 +5,11 @@ require("mason-null-ls").setup({
 })
 
 require("mason-lspconfig").setup({
-    automatic_installation = true
+    automatic_installation = true,
+    ensure_installed = { "lua_ls", "ts_ls", "jdtls" },
 })
+
+require('java').setup()
 
 local lspconfig = require("lspconfig")
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -15,7 +18,7 @@ require("mason-lspconfig").setup_handlers({
     function(server)
         if server == "ts_ls" then
             -- Custom config to limit tsserver to TypeScript files only
-            lspconfig.tsserver.setup({
+            lspconfig.ts_ls.setup({
                 filetypes = { "typescript", "typescriptreact", "typescript.tsx" }, -- Only for TS files
                 capabilities = capabilities,
                 on_attach = function(client, bufnr)
@@ -89,6 +92,8 @@ function setup_lsp_keymaps(client, bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>',
         { noremap = true, silent = true })
 end
+
+lspconfig.jdtls.setup({})
 
 -- Lua LSP configuration
 lspconfig.lua_ls.setup {

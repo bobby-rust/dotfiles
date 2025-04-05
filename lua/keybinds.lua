@@ -22,7 +22,7 @@ vim.api.nvim_set_keymap('n', '<Leader>ld', '<cmd>lua vim.diagnostic.open_float()
 -- Trigger code actions (quick fixes)
 vim.api.nvim_set_keymap('n', '<Leader>la', '<cmd>lua vim.lsp.buf.code_action()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('x', '<Leader>la', '<cmd>lua vim.lsp.buf.range_code_action()<CR>',
-    { noremap = true, silent = true })
+	{ noremap = true, silent = true })
 
 -- Move lines up
 vim.api.nvim_set_keymap('n', '<A-j>', ':m .+1<CR>==', { noremap = true, silent = true })
@@ -50,3 +50,6 @@ vim.keymap.set("n", "<leader>p", "\"+p", { noremap = true })
 -- Clipboard yank line
 vim.keymap.set("n", "<leader>cy", "\"+yy", { noremap = true })
 vim.keymap.set("v", "<leader>cy", "\"+y", { noremap = true })
+
+-- Go to next diagnostic
+vim.keymap.set("n", "<leader>ln", vim.diagnostic.goto_next, { noremap = true })

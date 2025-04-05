@@ -8,7 +8,8 @@ null_ls.setup({
     sources = {
         null_ls.builtins.formatting.prettierd.with({
             extra_args = {
-                "--tab-width=4"
+                "--tab-width=4",
+                "--print-width=100"
             }
         }),
         -- Attach DjLint for Handlebars files
